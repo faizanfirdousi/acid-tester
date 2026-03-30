@@ -11,7 +11,7 @@ Most people learn ACID from slides. This proves it works.
 **Prerequisites:** Go 1.22+, Docker
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/postgres-acid-tester
+git clone https://github.com/faizanfirdousi/acid-tester
 cd postgres-acid-tester
 
 docker compose up -d   # start Postgres
