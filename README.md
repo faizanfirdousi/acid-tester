@@ -138,23 +138,6 @@ Or pipe from outside:
 docker exec -i acid_postgres psql -U acid_user -d acid_db < sql/atomicity.sql
 ```
 
----
-
-## Optional: Makefile shortcuts
-
-If `make` is installed on your system (Linux/macOS):
-
-```bash
-make up      # docker compose up -d
-make run     # go run .
-make all     # up + run
-make psql    # open psql shell
-make down    # docker compose down
-make reset   # docker compose down -v (wipe data)
-```
-
----
-
 ## Override the database connection
 
 The binary connects to `localhost:5432` with `acid_user / acid_pass / acid_db` by default — matching the Docker container exactly.
