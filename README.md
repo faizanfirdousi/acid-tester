@@ -12,7 +12,7 @@ Most people learn ACID from slides. This proves it works.
 
 ```bash
 git clone https://github.com/faizanfirdousi/acid-tester
-cd postgres-acid-tester
+cd acid-tester
 
 docker compose up -d   # start Postgres
 go run .               # run the tests
