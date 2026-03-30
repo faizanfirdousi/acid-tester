@@ -58,10 +58,10 @@ Seeds a fake bank database (10 accounts, 20 transactions), then runs four tests 
 
 | Property | One-line summary | What we do |
 |---|---|---|
-| **A — Atomicity** | All-or-nothing | Transfer $200 Alice→Bob (succeeds). Transfer $99999 from Charlie with $150 (must rollback). Bob's balance must not change. |
-| **C — Consistency** | Rules are always enforced | Attempt 3 violations: negative balance `CHECK`, `NULL` name, orphan foreign key. All must be rejected by Postgres. |
-| **I — Isolation** | Concurrent sessions don't bleed | Session A reads Diana's balance. Session B commits a change. Under `READ COMMITTED` A sees it (expected). Under `REPEATABLE READ` A does not (snapshot preserved). |
-| **D — Durability** | Committed data survives crashes | Commit Frank→Grace $300. Query `pg_current_wal_lsn()` and `pg_stat_bgwriter` to confirm WAL write position and checkpoint stats. |
+| **A-Atomicity** | All-or-nothing | Transfer $200 Alice→Bob (succeeds). Transfer $99999 from Charlie with $150 (must rollback). Bob's balance must not change. |
+| **C-Consistency** | Rules are always enforced | Attempt 3 violations: negative balance `CHECK`, `NULL` name, orphan foreign key. All must be rejected by Postgres. |
+| **I-Isolation** | Concurrent sessions don't bleed | Session A reads Diana's balance. Session B commits a change. Under `READ COMMITTED` A sees it (expected). Under `REPEATABLE READ` A does not (snapshot preserved). |
+| **D-Durability** | Committed data survives crashes | Commit Frank→Grace $300. Query `pg_current_wal_lsn()` and `pg_stat_bgwriter` to confirm WAL write position and checkpoint stats. |
 
 ---
 
